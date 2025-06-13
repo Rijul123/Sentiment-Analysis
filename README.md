@@ -19,12 +19,13 @@ This project is an **end-to-end sentiment analysis pipeline** that processes app
 
 ```
 sentiment-analysis/
-├── 01_preprocess_reviews.py          # Clean and format reviews
-├── 02_sentiment_vader.py             # VADER sentiment analysis
-├── 02_sentiment_textblob.py          # TextBlob sentiment analysis
-├── 02_sentiment_llama_api.py         # Groq API (Llama 3) sentiment analysis
-├── 03_topic_model_lda.py             # Topic modelling using LDA
-├── 04_topic_assignment.py            # Assign topics to reviews
+├── web_scrapping.py               # scrape google play store for initial data
+├── preprocess_reviews.py          # Clean and format reviews
+├── sentiment_vader.py             # VADER sentiment analysis
+├── sentiment_textblob.py          # TextBlob sentiment analysis
+├── sentiment_llama_api.py         # Groq API (Llama 3) sentiment analysis
+├── topic_model_lda.py             # Topic modelling using LDA
+├── topic_assignment.py            # Assign topics to reviews
 ├── config.py                         # Loads secrets from .env
 ├── data/
 │   ├── raw/                          # Original review data
