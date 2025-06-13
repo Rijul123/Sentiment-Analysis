@@ -4,7 +4,7 @@ from openai import OpenAI
 
 
 client = OpenAI(
-base_url="https://api.groq.com/openai/v1", api_key= "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"
+base_url="https://api.groq.com/openai/v1", api_key= ""
 )
 
 data_file = "pre_processed.csv"  
