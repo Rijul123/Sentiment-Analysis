@@ -1,4 +1,3 @@
-<img width="1427" height="485" alt="image" src="https://github.com/user-attachments/assets/1e057f95-c95b-4ca2-95f1-97ed503f9c9c" />
 
 # Google Play Review Analyzer
 
@@ -56,4 +55,7 @@ python main.py com.whatsapp \
 ## 🌐 View Online
 
 https://playreviewscope.netlify.app
+
+<img width="1427" height="485" alt="image" src="https://github.com/user-attachments/assets/1e057f95-c95b-4ca2-95f1-97ed503f9c9c" />
+
 
