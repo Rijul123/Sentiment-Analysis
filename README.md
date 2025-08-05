@@ -1,45 +1,59 @@
-💬 Google Play Review Sentiment Analysis
-This project is a web-based application designed to perform sentiment analysis and topic modeling on Google Play Store reviews. It allows users to gain insights into public opinion about specific Android applications by scraping reviews, determining their sentiment (positive, negative, neutral), and identifying common themes or topics discussed within them.
+<img width="1427" height="485" alt="image" src="https://github.com/user-attachments/assets/1e057f95-c95b-4ca2-95f1-97ed503f9c9c" />
 
-✨ Features
-Google Play Review Scraping: Easily fetch reviews for any specified Android application available on the Google Play Store.
+# Google Play Review Analyzer
 
-Customizable Review Count: Choose the number of reviews you want to scrape for analysis.
+This project scrapes reviews from any Android app on the Google Play Store and does sentiment analysis and topic modelling on its reviews.
 
-Sentiment Analysis: Utilizes Natural Language Processing (NLP) techniques to classify each review's sentiment as positive, negative, or neutral.
+## 🔧 What It Does
 
-Topic Modeling: Identifies and extracts key topics or themes present across the collected reviews, providing a high-level understanding of user feedback.
+- Scrapes app reviews from Google Play  
+- Cleans and preprocesses the text  
+- Analyzes review sentiment (positive, neutral, negative)  
+- Identifies key topics using LDA  
 
-Interactive Web Interface: A user-friendly interface to input app names, select parameters, and view analysis results.
+## 📁 Files
 
-⚙️ How It Works
+- `fetch.py` – Scrapes app reviews  
+- `pre_process.py` – Cleans the text  
+- `sentiment.py` – Performs sentiment analysis  
+- `topics.py` – Extracts topics using LDA  
+- `main.py` – Main script that ties everything together  
 
+## Usage
 
-Input: The user provides the name of a Google Play app selects the number of reviews to look at.
+**Create and activate a virtual environment**
 
-Scraping: The backend scrapes reviews from the Google Play Store for the specified application.
+```bash
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+```
 
-Processing: The collected reviews undergo an NLP pipeline:
+**Install the Python packages**
 
-Sentiment Analysis: Each review is processed to determine its emotional tone.
+```bash
+pip install pandas nltk textblob scikit-learn google_play_scraper inflect
+```
 
-Topic Modeling: Algorithms are applied to group similar reviews and extract underlying topics.
+**Download the two NLTK corpora once**
 
-Output: The results, including overall sentiment distribution and identified topics, are presented in an easy-to-understand format on the web interface.
+```bash
+python - <<'PY'
+import nltk; nltk.download('vader_lexicon'); nltk.download('stopwords')
+PY
+```
 
+**Run**
 
+```bash
+python main.py com.whatsapp \
+  --n 500 \         # max reviews to scrape
+  --engine vader \ 
+  --n_topics 5      # number of topics
+```
 
+## or
 
+## 🌐 View Online
 
+https://playreviewscope.netlify.app
 
-To use the Review Sentiment Analysis tool:
-
-Navigate to the deployed application: https://playreviewscope.netlify.app/
-
-Enter App Name: Type the exact name of the Android application you wish to analyze in the designated input field.
-
-Select Review Count: Choose the number of reviews you want to scrape (e.g., 100, 500, 1000).
-
-Select Topic Count: Specify how many distinct topics you'd like the model to identify (e.g., 3, 5, 10).
-
-Click "Analyze": Initiate the analysis process and view the results.
