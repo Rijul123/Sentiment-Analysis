@@ -1,0 +1,9 @@
+Flask
+Flask-Cors
+pandas
+google-play-scraper 
+nltk
+scikit-learn
+textblob
+inflect
+gunicorn
